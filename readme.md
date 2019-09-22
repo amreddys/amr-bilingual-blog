@@ -1,6 +1,6 @@
-<p align="center">AMR Bilingual Blog</p>
+<h1 align="center">AMR Bilingual Blog</h1>
 
-<p>Based on Laravl 6.0</p>
+<p>Based on Laravel 6.0</p>
 <p>A simple blogging system developed with bilingual support</p>
 
 ## by A M Reddy's
