@@ -56,7 +56,7 @@
                             class="md:w-6/12"
                             style="height:20vh;"
                             link="{{$post->link}}"
-                            >{{substr($post->title,0,100)}}</carditem-2>
+                            >{{mb_substr($post->title,0,45,'utf-8')}} @if(mb_strlen($post->title,'utf-8') > 45)...@endif</carditem-2>
                     @endforeach
                 </div>
                 

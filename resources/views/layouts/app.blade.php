@@ -67,9 +67,11 @@
                                 </li>
                             @endif
                         @else
+                            {{--
                             <li class="nav-item">
                                     <a class="nav-link" href="{{ route('categories.index') }}">{{ __('Categories') }}</a>
                             </li>
+                            --}}
                             <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="{{ route('posts.index') }}" id="postsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ __('Posts') }} <span class="caret"></span>

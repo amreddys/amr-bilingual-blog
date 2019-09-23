@@ -6,9 +6,10 @@
                     <div class="flex items-center justify-center">
 
                         <div class="hidden sm:flex sm:items-center main-nav">
-                            <a :href="homeUrl" class="text-white text-lg hover:bg-orange-700 px-3 transition transition-medium py-4">Home</a>
-                            <a :href="dashboard" v-if="showdashboard" class="text-white text-lg hover:bg-orange-700 px-3 transition transition-medium py-4">Dashboard</a>
-                            <a :href="langUrl" class="text-white text-lg hover:bg-orange-700 px-3 transition transition-medium py-4">{{nextLang}}</a>
+                            <a :href="homeUrl" class="text-white text-lg  hover:text-white hover:bg-orange-700 px-3 transition transition-medium py-4">Home</a>
+                            <a :href="dashboard" v-if="showdashboard" class="text-white  hover:text-white text-lg hover:bg-orange-700 px-3 transition transition-medium py-4">Dashboard</a>
+                            <a :href="item.url" v-for="item in categoryItems" :key="item.id" class="text-white text-lg hover:text-white hover:bg-orange-700 px-3 transition transition-medium py-4">{{item.name}}</a>
+                            <a :href="langUrl" class="text-white text-lg hover:bg-orange-700  hover:text-white px-3 transition transition-medium py-4">{{nextLang}}</a>
                         </div>
 
                         <div class="sm:hidden cursor-pointer w-full items-center py-4">
@@ -23,6 +24,7 @@
                         <div class="flex flex-col">
                             <a :href="homeUrl" class="text-white text-sm mb-1">Home</a>
                             <a :href="dashboard" v-if="showdashboard" class="text-white text-sm mb-1">Dashboard</a>
+                            <a :href="item.url" v-for="item in categoryItems" :key="item.id" class="text-white text-sm mb-1">{{item.name}}</a>
                             <a :href="langUrl" class="text-white text-sm mb-1">{{nextLang}}</a>
                         </div>
                     </div>
@@ -41,13 +43,32 @@ export default {
             nextLang:   window.localeToggle == "tel" ? "తెలుగు" : "English",
             dashboard: window.siteUrl + "/home",
             showdashboard: window.showdashboard,
+            categoryItems: [],
         }
     },
     methods: {
         toggleMenu()
         {
             this.menuOpen = !this.menuOpen;
+        },
+        fillmenu(items)
+        {
+            this.categoryItems = items;
+        },
+        loadCategoryMenuItems()
+        {
+            axios.get(window.siteUrl + "/category_menuitems/1")
+                .then((response) => {
+                    this.fillmenu(response.data.data)
+                })
+                .catch(function (error){
+                    console.log("Error loading category menu items");
+                    console.log(error);
+                });
         }
+    },
+    mounted() {
+        this.loadCategoryMenuItems();
     }
 }
 </script>

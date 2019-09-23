@@ -6,10 +6,14 @@ module.exports = {
       headingsTelugu: ['Ramabhadra'],
       bodyTelugu: ['Mallanna'],
       widget: ['Barlow', 'sans-serif'],
+      pagination: ['Barlow', 'sans-serif'],
     },
+    
     extend: {
-    }
+      
+    },
   },
   variants: {},
-  plugins: []
+  plugins: [
+  ]
 }

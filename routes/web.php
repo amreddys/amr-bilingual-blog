@@ -20,8 +20,14 @@ Route::get('setlocale/{locale}','HomeController@setLocale');
 
 Route::get('/post/{slug_str}',"PostController@view")->name('post_view');
 Route::get('/posts_list','PostController@list');
+
+Route::get('/posts/recent','PostController@recent');
 Route::get('/posts/edit/{post}','PostController@edit');
 Route::resource('/posts','PostController');
+
+Route::get('/category/{slug}','CategoryController@view')->name('category_view');
+
+Route::get('/category_menuitems/{menu_number}','CategoryController@menuitems')->name('category_menus');
 
 Route::get('/categories/list','CategoryController@list');
 Route::resource('/categories','CategoryController');

@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Resources\PostResource;
+use App\Http\Resources\PostViewResource;
 
 class PostController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth',['except' => ['show', 'view', 'index']]);
+        $this->middleware('auth',['except' => ['show', 'view', 'index', 'recent']]);
+    }
+    public function recent()
+    {
+        return PostViewResource::collection(Post::where('status','published')->orderBy('id','desc')->limit(10)->get());
     }
     /**
      * Display a listing of the resource.
@@ -67,12 +72,12 @@ class PostController extends Controller
         $excerpt_tel = $request->excerpt_tel;
         if($excerpt_en == '')
         {
-            $excerpt_en = substr(strip_tags($request->en_content),0,200);
+            $excerpt_en = mb_substr(strip_tags($request->en_content),0,300,'utf-8');
         }
 
         if($excerpt_tel == '')
         {
-            $excerpt_tel = substr(strip_tags($request->tel_content),0,200);
+            $excerpt_tel = mb_substr(strip_tags($request->tel_content),0,300,'utf-8');
         }
 
         $post = new Post;

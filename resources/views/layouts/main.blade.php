@@ -53,8 +53,8 @@
         </div>
         <footer class="w-full" style="background:#222;">
             <div class="container mx-auto h-full py-16">
-                <div class="flex">
-                    <div class="w-4/12 flex-shrink-0 px-6">
+                <div class="flex flex-wrap">
+                    <div class="md:w-4/12 w-full flex-shrink-0 px-6">
                         <head-linefilled class="text-white text-3xl">About</head-linefilled>
                         <div class="content text-md text-gray-400">
                             <p>{{config('app.about')}}</p>
@@ -82,16 +82,20 @@
                             </a>
                         </div>
                     </div>
-                    <div class="w-4/12 flex-shrink-0 px-6">
-                        <head-linefilled class="text-white text-3xl">Recent Posts</head-linefilled>
-                        <div class="content text-md text-gray-400">
-                            coming soon
-                        </div>
-                    </div>
-                    <div class="w-4/12 flex-shrink-0 px-6">
+                    <div class="md:w-4/12 w-full flex-shrink-0 px-6">
                         <head-linefilled class="text-white text-3xl">Facebook Feed</head-linefilled>
                         <div class="content text-md text-gray-400">
-                            coming soon
+                            <div class="h-48 w-full bg-blue-700">
+                                <p class="text-white text-center pt-20">Coming Soon</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-4/12 w-full flex-shrink-0 px-6">
+                        <head-linefilled class="text-white text-3xl">Twitter Feed</head-linefilled>
+                        <div class="content text-md text-gray-400">
+                            <div class="h-48 w-full bg-blue-500 mt-5">
+                                <p class="text-white text-center pt-20">Coming Soon</p>
+                            </div>
                         </div>
                     </div>
                 </div>

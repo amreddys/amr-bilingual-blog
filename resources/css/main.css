@@ -1,94 +1,96 @@
 @tailwind base;
-  body {
-      @apply font-body;
-      @apply bg-gray-100;
-  }
-  h1, h2, h3, h4, h5, h6 {
-      @apply font-headings;
-  }
-  h1 {
-    @apply text-2xl;
-  }
-  h2 {
-    @apply text-xl;
-  }
-  h3 {
-    @apply text-lg;
-  }
-  h1.telugu-heading {
-    @apply text-4xl !important;
-  }
-  h2.telugu-heading {
-    @apply text-3xl !important;
-  }
-  h3.telugu-heading {
-    @apply text-2xl !important;
-  }
-  a {
-    color: #fc4a00;
-    @apply cursor-pointer;
-  }
-  a:hover {
-    color: #fe803b;
-  }
-  .english-heading {
-    @apply font-headings !important;
-  }
-  .english-body {
-    @apply font-body !important;
-  }
-  .telugu-heading {
-    @apply font-headingsTelugu !important;
-  }
-  .telugu-body {
-    @apply font-bodyTelugu !important;
-  }
-  .widget-heading {
-    @apply font-widget font-bold;
-  }
-  .jumbotron-gradient {
-      background-image: -webkit-linear-gradient(70deg,#f84270 0%,#fe803b 100%);
-      background-image: -o-linear-gradient(70deg,#f84270 0%,#fe803b 100%);
-      background-image: linear-gradient(20deg,#f84270 0%,#fe803b 100%);
-  }
-  .nav-gradient {
-    background-image: -webkit-linear-gradient(70deg,#f84270 0%,#fe803b 100%);
-    background-image: -o-linear-gradient(70deg,#f84270 0%,#fe803b 100%);
-    background-image: linear-gradient(20deg,#f84270 0%,#fe803b 100%);
-  }
-  .main-nav a {
-    @apply leading-loose;
-  }
-  .bg-gradient-black-transparent {
-    background-image: -webkit-linear-gradient(180deg,transparent 0%,#222 100%);
-    background-image: -o-linear-gradient(180deg,transparent 0%,#222 100%);
-    background-image: linear-gradient(180deg,transparent 0%,#222 100%);
-  }
-  .transition-slow {
-    -webkit-transition: all 800ms ease;
-    -o-transition: all 800ms ease;
-    transition: all 800ms ease;
-  }
-  .transition-medium {
-    -webkit-transition: all 400ms ease;
-    -o-transition: all 400ms ease;
-    transition: all 400ms ease;
-  }
-  .transition-fast {
-    -webkit-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-  }
-  .transition-zoom {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-  p
-  {
-    @apply mb-3;
-    @apply text-justify;
-  }
+body {
+  @apply font-body;
+  @apply bg-gray-100;
+}
+h1, h2, h3, h4, h5, h6 {
+  @apply font-headings;
+}
+h1 {
+@apply text-2xl;
+}
+h2 {
+@apply text-xl;
+}
+h3 {
+@apply text-lg;
+}
+h1.telugu-heading {
+@apply text-4xl !important;
+}
+h2.telugu-heading {
+@apply text-3xl leading-snug !important;
+}
+h3.telugu-heading {
+@apply text-2xl leading-tight !important;
+}
+a {
+color: #fc4a00;
+@apply cursor-pointer;
+}
+a:hover {
+color: #fe803b;
+}
+.english-heading {
+@apply font-headings !important;
+}
+.english-body {
+@apply font-body !important;
+}
+.telugu-heading {
+@apply font-headingsTelugu !important;
+}
+.telugu-body {
+@apply font-bodyTelugu !important;
+}
+.widget-heading {
+@apply font-widget font-bold;
+}
+.jumbotron-gradient {
+  background-image: -webkit-linear-gradient(70deg,#f84270 0%,#fe803b 100%);
+  background-image: -o-linear-gradient(70deg,#f84270 0%,#fe803b 100%);
+  background-image: linear-gradient(20deg,#f84270 0%,#fe803b 100%);
+}
+.nav-gradient {
+background-image: -webkit-linear-gradient(70deg,#f84270 0%,#fe803b 100%);
+background-image: -o-linear-gradient(70deg,#f84270 0%,#fe803b 100%);
+background-image: linear-gradient(20deg,#f84270 0%,#fe803b 100%);
+}
+.main-nav a {
+@apply leading-loose;
+}
+.bg-gradient-black-transparent {
+background-image: -webkit-linear-gradient(180deg,transparent 0%,#222 100%);
+background-image: -o-linear-gradient(180deg,transparent 0%,#222 100%);
+background-image: linear-gradient(180deg,transparent 0%,#222 100%);
+}
+.transition-slow {
+-webkit-transition: all 800ms ease;
+-o-transition: all 800ms ease;
+transition: all 800ms ease;
+}
+.transition-medium {
+-webkit-transition: all 400ms ease;
+-o-transition: all 400ms ease;
+transition: all 400ms ease;
+}
+.transition-fast {
+-webkit-transition: all 200ms ease;
+-o-transition: all 200ms ease;
+transition: all 200ms ease;
+}
+.transition-zoom {
+-webkit-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);
+}
+p
+{
+@apply mb-3;
+@apply text-justify;
+}
+
+
 @variants hover {
   .bg-move-left {
     background-position: 60% 50%;
@@ -102,10 +104,29 @@
     transform: scale(1.1);
   }
 }
+.pagination {
+  @apply flex justify-center p-0 list-none mt-10 mr-0 font-bold font-pagination;
+}
+.pagination .page-item .page-link{
+  @apply p-3 block border text-orange-600;
+}
+.pagination .page-item .page-link:hover
+{
+  @apply bg-orange-600 text-white;
+}
+.pagination .page-item.active .page-link {
+  @apply bg-orange-600 text-white;
+}
+.pagination .page-item.active .page-link:hover {
+  @apply bg-orange-600;
+} 
+.pagination .page-item.disabled .page-link {
+  @apply text-gray-700 font-normal font-body;
+}
+.pagination .page-item.disabled .page-link:hover {
+  @apply text-gray-700 bg-transparent font-normal font-body;
+}
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css?family=Lato:700|Montserrat:400,500,600|Barlow:700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Mallanna|Ramabhadra&display=swap&subset=telugu');
-.yolo {
-    background: #fff;
-}

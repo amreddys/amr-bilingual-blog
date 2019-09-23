@@ -11,6 +11,10 @@ class Category extends Model
     {
         return $this->belongsToMany('App\Post','posts_categories');
     }
+    public function getLinkAttribute()
+    {
+        return route('category_view',['slug' => $this->slug]);
+    }
     public function getBadgeBackground()
     {
         $strlen = strlen($this->name);

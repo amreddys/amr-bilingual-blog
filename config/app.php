@@ -68,7 +68,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Kolkata',
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'tel',
     'locales' => ['tel', 'en'],
 
     /*

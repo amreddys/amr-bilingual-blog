@@ -14,8 +14,8 @@
     @endif
 @endsection
 @section('content')
-    <div class="container mx-auto">
-        <div class="w-full block text-sm"><p><a href="{{url('/')}}">Home</a> > <a href="{{route('posts.index')}}">Posts</a> > <a href="{{$post->link}}">{{$post->title}}</a> </p></div>
+    <div class="container mx-auto px-2">
+        <div class="w-full block text-sm"><p><homecrumb href="{{url('/')}}"></homecrumb><crumbsep></crumbsep><postcrumb href="{{route('posts.index')}}"></postcrumb><crumbsep></crumbsep><catitemcrumb href="{{$post->link}}">{{$post->title}}</catitemcrumb> </p></div>
         <div class="w-full flex mt-8">
             <div class="flex-shrink-0 w-full md:w-8/12">
                 <h1 class="text-3xl {{$post->locale_heading_class}}">{{ $post->title }}</h1>
@@ -32,7 +32,7 @@
                 <div class="content {{$post->locale_body_class}}">{!!$post->content!!}</div>
             </div>
             <div class="flex-shrink-0 w-full md:w-4/12">
-                
+                <postsidebar></postsidebar>
             </div>
         </div>
     </div>

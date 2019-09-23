@@ -4,16 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use App\Http\Resources\CategoryMenuResource;
 
 class CategoryController extends Controller
 {
     public function __constructor()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => ['show', 'view', 'index', 'menuitems']]);
     }
     public function list()
     {
         return [ 'categories' => Category::all()->pluck('name','id') ];
+    }
+    public function menuitems($menu_number)
+    {
+        if($menu_number != 0)
+            return CategoryMenuResource::collection(Category::where('menu_number',$menu_number)->get());
+        else
+            abort(404);
     }
     /**
      * Display a listing of the resource.
@@ -52,9 +60,16 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(Category $category, Request $request)
     {
-        //
+        if($request->route()->getName() != 'category_view')
+            return redirect()->route('category_view',['slug' => $category->slug]);
+        return view('categories.show',['category' => $category, 'category_posts' => $category->posts()->paginate(20)]);
+    }
+    public function view($slug, Request $request)
+    {
+        $category = Category::where('slug',$slug)->firstOrFail();
+        return $this->show($category,$request);
     }
 
     /**
