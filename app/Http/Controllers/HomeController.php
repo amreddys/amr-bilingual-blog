@@ -27,7 +27,7 @@ class HomeController extends Controller
         return view('home');
     }
     public function main() {
-        $featured_posts = Category::find(1)->posts()->limit(3)->get();
+        $featured_posts = Category::find(1)->posts()->orderBy('posts.created_at','desc')->limit(3)->get();
         $recent_posts = Post::orderby('created_at','desc')->limit(5)->get();
         return view('welcome',['featured_posts' => $featured_posts, 'recent_posts' => $recent_posts]);
     }

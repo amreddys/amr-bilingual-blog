@@ -27,8 +27,9 @@
                 <div class="inline-block text-gray-600 text-sm">
                     Written by <strong>{{$post->author}}</strong>. Published on <strong>{{$post->publish_date}}.</strong>
                 </div>
-
-                <img src="{{url('/')}}/{{$post->featured_image}}" class="my-4 block" />
+                <hr class="my-2">
+                <p class="text-teal-800 mt-6">{!! $post->excerpt !!}</p>
+                <img src="{{url('/')}}/{{$post->featured_image}}" class="my-1 block" />
                 <div class="content {{$post->locale_body_class}}">{!!$post->content!!}</div>
             </div>
             <div class="flex-shrink-0 w-full md:w-4/12">

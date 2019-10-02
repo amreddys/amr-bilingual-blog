@@ -8,7 +8,7 @@
                 <p :style="additionalCategoryCss" class="inline-block rounded-full px-3 py-1 my-1 text-xs mr-2">{{category}}</p>
                 <h3 :class="hlangClasses" @click="takeMe()">{{title}}</h3>
                 <p class="text-gray-700 text-xs position-absolute">{{posted}}</p>
-                <p :class="blangClasses"><slot></slot>... <br /><a :href="link">Read More</a></p>
+                <p :class="blangClasses"><slot></slot>...<a :href="link">More</a></p>
             </div>
         </div>
     </div>
@@ -21,7 +21,7 @@ export default {
             additionalCategoryCss: "color:"+this.categoryTextcolor+";background-color:"+this.categoryColor,
             bgImg: "background-image: url('"+this.image+"');",
             hlangClasses: "text-black cursor-pointer "+window.localeHeadingClass,
-            blangClasses: "text-black "+window.localeBodyClass,
+            blangClasses: "text-black whitespace-normal "+window.localeBodyClass,
         }
     },
     methods: {

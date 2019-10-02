@@ -9,7 +9,6 @@
                             <a :href="homeUrl" class="text-white text-lg  hover:text-white hover:bg-orange-700 px-3 transition transition-medium py-4">Home</a>
                             <a :href="dashboard" v-if="showdashboard" class="text-white  hover:text-white text-lg hover:bg-orange-700 px-3 transition transition-medium py-4">Dashboard</a>
                             <a :href="item.url" v-for="item in categoryItems" :key="item.id" class="text-white text-lg hover:text-white hover:bg-orange-700 px-3 transition transition-medium py-4">{{item.name}}</a>
-                            <a :href="langUrl" class="text-white text-lg hover:bg-orange-700  hover:text-white px-3 transition transition-medium py-4">{{nextLang}}</a>
                         </div>
 
                         <div class="sm:hidden cursor-pointer w-full items-center py-4">
@@ -25,7 +24,6 @@
                             <a :href="homeUrl" class="text-white text-sm mb-1">Home</a>
                             <a :href="dashboard" v-if="showdashboard" class="text-white text-sm mb-1">Dashboard</a>
                             <a :href="item.url" v-for="item in categoryItems" :key="item.id" class="text-white text-sm mb-1">{{item.name}}</a>
-                            <a :href="langUrl" class="text-white text-sm mb-1">{{nextLang}}</a>
                         </div>
                     </div>
                 </div>
